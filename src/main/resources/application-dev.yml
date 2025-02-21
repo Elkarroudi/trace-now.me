@@ -1,0 +1,41 @@
+spring:
+  datasource:
+    url: ${POSTGRESQL_URL}
+    username: ${POSTGRESQL_USERNAME}
+    password: ${POSTGRESQL_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+  mail:
+    host: ${MAIL_HOST}
+    port: ${MAIL_PORT}
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: ${MAIL_SMTP_AUTH_PROPERTY}
+    default-encoding: UTF-8
+
+  data:
+    mongodb:
+      uri: ${MONGODB_CONNECTION_STRING}
+      database: ${MONGODB_DATABASE}
+
+  application:
+    name: ${APPLICATION_NAME}
+    version: ${APPLICATION_VERSION}
+
+server:
+  port: ${SERVER_PORT}
+
+logging:
+  level:
+    org.springframework.security: trace
+
+security:
+  secret-key: ${SECRET_ENCRYPT_KEY}
+  expiration-time: ${ACCESS_TOKEN_EXPIRATION_TIME}
